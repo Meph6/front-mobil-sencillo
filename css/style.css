@@ -1,0 +1,379 @@
+/* Estilos globales */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-family: 'Vollkorn', serif;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;  
+}
+
+ul {
+  list-style: none;
+}
+
+p {
+  font-size: 1.8rem;
+}
+
+img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+section {
+  padding: 5rem 0;
+}
+
+/* header */
+header {
+  width: 100%;
+  height: 5rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1
+}
+
+.contenedor {
+  width: 100%;
+  max-width: 98rem;
+  margin: 0 auto;
+  padding: 0 5rem;
+}
+
+nav {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+  border-bottom: 3px solid rgb(148, 59, 0);
+}
+
+.nav-marca {
+  width: 7rem;
+}
+
+.menu-iconos ion-icon {
+  font-size: 6.5rem;
+  color: bisque;
+  cursor: pointer;
+  --ionicon-stroke-width: 45px;
+}
+
+.menu-iconos.quitar {
+  display: none;
+}
+
+.cerrar ion-icon{
+  color: rgb(78, 0, 0);
+}
+
+.cerrar {
+  position: absolute;
+  top: 3.5rem;
+  left: 2rem;
+}
+
+.nav-lista {
+  width: 37rem;
+  height: 100vh;
+  background-color: rgba(71, 85, 8, 0.876);
+  position: fixed;
+  top: 0;
+  right: -38rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 650ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  /*z-index: 1500;*/
+}
+
+.nav-lista.activar {
+  right: 0;
+}
+
+.nav-punto {
+  margin: 1.5rem 0;
+}
+
+.nav-enlace {  
+  font-size: 3rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: rgba(233, 232, 232, 0.781);
+}
+
+/* presentacion */
+.presentacion {
+  width: 100%;
+  height: 84vh;
+  background: linear-gradient(
+    -25deg,
+  rgba(19, 73, 2, 0.555) 10%, 
+  rgba(102, 2, 2, 0.383) 99%),
+    url("../images/fondo-header.jpeg") left center no-repeat;
+    position: relative;
+}
+
+.presentacion::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 10.7rem;
+  background: url('../images/wave.svg') center no-repeat;
+  background-size: cover;
+}
+
+.mensaje-principal {
+  width: 100%;
+  max-width: 50rem;
+  color: white;
+  text-transform: uppercase;
+  transform: translateY(15%);
+  font-size: 5rem;
+}
+
+.mensaje-principal h3 {
+  font-size: 2.5rem;
+}
+
+.mensaje-principal h1 {
+  font-family: 'Vollkorn SC', serif;
+  font-size: 4rem;
+  margin: 1rem 0;
+}
+
+.mensaje-principal p {
+  text-transform: lowercase;
+  font-size: 2.6rem;
+  margin: 6rem 0 8rem;
+}
+/* botón de la sección primera */
+.btn {
+  font-size: 2.8rem;
+  background-color: rgba(104, 16, 4, 0.924);
+  border-radius: 4rem;
+  color: greenyellow;
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 2rem 3.5rem;
+  transition: background-color, color 650ms;
+}
+
+.btn:hover {
+  background-color: rgba(50, 85, 0, 0.938);
+  color: rgb(255, 164, 90);
+}
+
+/* experiencia-cultural */
+.experiencia-cultural {
+  padding: 0;
+}
+
+.titulo-encabezado {
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 5rem;
+  color: rgba(0, 0, 0, .7);
+}
+
+.titulo-encabezado h3 {
+  font-size: 1.4rem;
+}
+
+.titulo-encabezado h1 {
+  font-family: 'Vollkorn SC', serif;
+  font-size: 2rem;
+  margin: 1rem 0;
+}
+
+.titulo-encabezado p {
+  text-transform: lowercase;
+}
+
+.actividades-cuadricula {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  grid-gap: 2.5rem;
+}
+
+.actividades-cuadricula-punto {
+  height: 40rem;
+  padding: 5rem;
+  color: #fafafa;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+  z-index: -1;
+}
+
+.actividades-cuadricula-punto::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+    -25deg,
+  rgba(19, 73, 2, 0.767) 10%, 
+  rgba(102, 2, 2, 0.616) 90%);
+  z-index: -1;
+}
+
+.actividades-cuadricula-punto ion-icon {
+  font-size: 6rem;
+  font-weight: 900;
+  color: rgba(202, 81, 0, 0.945);
+}
+
+.actividades-cuadricula-punto h1 {
+  font-family: 'Vollkorn SC', serif;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  margin: 2rem 0;
+}
+
+.actividades-cuadricula-punto p {
+  font-size: 1.9rem;
+}
+
+.navegacion-vikinga {
+  background: url('../images/navegacion-vikinga.jpg') left center no-repeat;
+  background-size: cover;
+}
+
+.festividad-hostblot {
+  background: url('../images/festividad-hostblot.jpg') right center no-repeat;
+  background-size: cover;
+}
+
+.heroe-arminio {
+  background: url('../images/heroe-arminio.jpg') right center no-repeat;
+  background-size: cover;
+}
+
+/* Testimonios */
+.testimonios {
+  width: 100%;
+  height: 80vh;
+  background: linear-gradient(
+    -25deg,
+  rgba(19, 73, 2, 0.746) 10%, 
+  rgba(102, 2, 2, 0.726) 90%),
+    url("../images/fondo-testimonio.jpeg") left center no-repeat fixed;
+    position: relative;
+}
+
+.testimonios::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 11.7rem;
+  background: url('../images/wave.svg') center no-repeat;
+  background-size: cover;
+  transform: scale(1,-1);
+}
+
+.testimonio {
+  width: 100%;
+  color: #fafafa;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.testimonio-texto {
+  padding: 0 1.5rem;
+  margin: 20rem 0 3rem 0;
+  position: relative;
+}
+
+.testimonio-texto p {
+  font-size: 2.5rem;
+}
+
+.testimonio-texto ion-icon {
+  position: absolute;
+  top: -12rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 10rem;
+  color: rgba(245, 108, 17, 0.945);
+  opacity: .8;
+  z-index: -1;
+}
+
+.testimonio-cliente img{
+  width: 15rem;
+  height: 15rem;
+  border-radius: 50%;
+  border: 5px solid rgb(113, 255, 78);
+}
+
+.testimonio-cliente h1 {
+  font-size: 2rem;
+  margin-top: 2rem;
+}
+/* comienza la aventura */
+.aventura-cuadricula {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  grid-gap: 2.5rem
+}
+
+.aventura-cuadricula-punto p{
+  color: rgba(0, 0, 0, 0.7);
+}
+
+footer {  
+  padding: 2.5rem 0;
+  background-color: rgba(41, 15, 1, 0.876);
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+footer p {
+  font-size: .7rem;
+}
+
+/* media queries 
+@media only screen and (min-width: 768px) {
+  header {
+    height: 8rem;
+  }
+  
+  .nav-marca {
+    width: 3.8rem;
+  }
+  
+}
+
+@media only screen and (min-width: 376px){
+  .mensaje-principal {
+    transform: translateY(30%);
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+}
+*/
